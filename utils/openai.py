@@ -1,6 +1,9 @@
 from langchain.embeddings import OpenAIEmbeddings
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import create_extraction_chain
+from tqdm import tqdm
+from pathlib import Path
+import json
 import uuid
 import openai
 import os
@@ -14,14 +17,16 @@ def get_embedding_simple(text: str) -> list:
     return embeddings
 
 
-def get_embeddings(metadata_list: list, max_num_sets: int = None) -> list:
+def get_embeddings(metadata_list: list, max_num_sets: int = None, save_to_file: bool = False) -> list:
     """Get embeddings for all metadata fields, organizes them as list of objects similar to Qdrant points"""
     embeddings_client = OpenAIEmbeddings()
     all_qdrant_ponits = []
     if not max_num_sets:
         max_num_sets = len(metadata_list)
-    for m in metadata_list[:max_num_sets]:
-        print("Generating embeddings for DANDI set:", m["dandiset_id"])
+    iterable = tqdm(metadata_list[:max_num_sets])
+    for m in iterable:
+        # print("Generating embeddings for DANDI set:", m["dandiset_id"])
+        iterable.set_description(f"Processing item {m['dandiset_id']}")
         n_approaches = len(m["approaches"])
         n_measurement_techniques = len(m["measurement_techniques"])
         n_variables_measured = len(m["variables_measured"])
@@ -111,12 +116,14 @@ def get_embeddings(metadata_list: list, max_num_sets: int = None) -> list:
                 }
             )
         all_qdrant_ponits.extend(qdrant_points)
+        if save_to_file and len(all_qdrant_ponits) > 0:
+            with open(str(Path.cwd() / "qdrant_points.json"), "w") as f:
+                json.dump(all_qdrant_ponits, f)
     return all_qdrant_ponits
 
 
-def keywords_extraction(user_question: str):
+def keywords_extraction(user_input: str):
     llm = ChatOpenAI(
-        # openai_api_key=self.secrets.OPENAI_API_KEY,
         model="gpt-3.5-turbo-0613",
         temperature=0
     )
@@ -158,7 +165,7 @@ def keywords_extraction(user_question: str):
         "required": [],
     }
     chain = create_extraction_chain(schema, llm)
-    return chain.run(user_question)
+    return chain.run(user_input)
 
 
 def prepare_keywords_for_semantic_search(keywords_list: list) -> list:
@@ -166,12 +173,11 @@ def prepare_keywords_for_semantic_search(keywords_list: list) -> list:
     for obj in keywords_list:
         for k, v in obj.items():
             if v:
-                keywords_set.add(f"{k.lower()} {v.lower()}")
+                keywords_set.add(v.lower())
     return list(keywords_set)
 
 
 def add_ordered_similarity_results_to_prompt(similarity_results: list, prompt: str = ""):
-    prompt += "Most relevant Dandi sets:\n"
     for r in similarity_results:
         dandiset_id = r[0].split("/")[0].split("DANDI:")[1]
         score = r[1]
@@ -191,10 +197,10 @@ def add_ordered_similarity_results_to_prompt(similarity_results: list, prompt: s
     return prompt
 
 
-def get_llm_chat_answer(prompt: str):
+def get_llm_chat_answer(prompt: str, model: str = "gpt-3.5-turbo"):
     openai.api_key = os.getenv("OPENAI_API_KEY")
     completion = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",
+        model=model,
         messages=[
             {"role": "system", "content": "You are a helpful neuroscience research assistant, you give brief and informative suggestions to users questions, always based on a list of relevant reference dandi sets."},
             {"role": "user", "content": prompt}

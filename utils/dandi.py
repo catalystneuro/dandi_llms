@@ -56,21 +56,36 @@ def collect_relevant_metadata(metadata_list: list):
     """Extract only relevant text fields from metadata list"""
     all_metadata_formatted = []
     for m in metadata_list:
-        title = f"title: {m.name}"
-        description = f"description: {m.description}"
-        approaches = [f"approach: {a.name}" for a in m.assetsSummary.approach]
-        measurement_techniques = [f"measurement technique: {a.name}" for a in m.assetsSummary.measurementTechnique]
-        variables_measured = [f"variable measured: {a}" for a in m.assetsSummary.variableMeasured]
-        species = [f"species: {a.name}" for a in m.assetsSummary.species]
-        all_metadata_formatted.append(
-            {
-                "dandiset_id": m.id,
-                "title": title,
-                "description": description,
-                "approaches": approaches,
-                "measurement_techniques": measurement_techniques,
-                "variables_measured": variables_measured,
-                "species": species,
-            }
-        )
+        try:
+            title = f"title: {m.name}"
+            description = f"description: {m.description}"
+            if m.assetsSummary.approach:
+                approaches = [f"approach: {a.name}" for a in m.assetsSummary.approach]
+            else:
+                approaches = []
+            if m.assetsSummary.measurementTechnique:
+                measurement_techniques = [f"measurement technique: {a.name}" for a in m.assetsSummary.measurementTechnique]
+            else:
+                measurement_techniques = []
+            if m.assetsSummary.variableMeasured:
+                variables_measured = [f"variable measured: {a}" for a in m.assetsSummary.variableMeasured]
+            else:
+                variables_measured = []
+            if m.assetsSummary.species:
+                species = [f"species: {a.name}" for a in m.assetsSummary.species]
+            else:
+                species = []
+            all_metadata_formatted.append(
+                {
+                    "dandiset_id": m.id,
+                    "title": title,
+                    "description": description,
+                    "approaches": approaches,
+                    "measurement_techniques": measurement_techniques,
+                    "variables_measured": variables_measured,
+                    "species": species,
+                }
+            )
+        except Exception as e:
+            raise e
     return all_metadata_formatted
