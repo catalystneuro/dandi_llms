@@ -162,3 +162,6 @@ cython_debug/
 
 # Qdrant
 *qdrant_storage*
+
+repo_secrets.py
+.vscode/*

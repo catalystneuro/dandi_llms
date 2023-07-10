@@ -1,0 +1,419 @@
+{
+    "000008": {
+        "doi": "doi:10.1038/s41586-020-2907-3",
+        "metadata": {
+            "species_names": [
+                "House mouse"
+            ],
+            "approach_names": [],
+            "measurement_names": [],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+            ],
+            "anatomy": [
+                "UBERON:0001384"
+            ],
+            "anatomy_identifiers": [
+                null
+            ]
+        },
+        "abstract": "Cortical neurons exhibit extreme diversity in gene expression as well as in morphological and electrophysiological properties1,2. Most existing neural taxonomies are based on either transcriptomic3,4 or morpho-electric5,6 criteria, as it has been technically challenging to study both aspects of neuronal diversity in the same set of cells7. Here we used Patch-seq8 to combine patch-clamp recording, biocytin staining, and single-cell RNA sequencing of more than 1,300 neurons in adult mouse primary motor cortex, providing a morpho-electric annotation of almost all transcriptomically defined neural cell types. We found that, although broad families of transcriptomic types (those expressing Vip, Pvalb, Sst and so on) had distinct and essentially non-overlapping morpho-electric phenotypes, individual transcriptomic types within the same family were not well separated in the morpho-electric space. Instead, there was a continuum of variability in morphology and electrophysiology, with neighbouring transcriptomic cell types showing similar morpho-electric features, often without clear boundaries between them. Our results suggest that neuronal types in the neocortex do not always form discrete entities. Instead, neurons form a hierarchy that consists of distinct non-overlapping branches at the level of families, but can form continuous and correlated transcriptomic and morpho-electrical landscapes within families."
+    },
+    "000034": {
+        "doi": "doi:10.7554/eLife.61834",
+        "metadata": {
+            "species_names": [
+                "House mouse"
+            ],
+            "approach_names": [
+                "electrophysiological approach"
+            ],
+            "measurement_names": [
+                "multi electrode extracellular electrophysiology recording technique",
+                "surgical technique",
+                "spike sorting technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+            ],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Much development has been directed toward improving the performance and automation of spike sorting. This continuous development, while essential, has contributed to an over-saturation of new, incompatible tools that hinders rigorous benchmarking and complicates reproducible analysis. To address these limitations, we developed SpikeInterface, a Python framework designed to unify preexisting spike sorting technologies into a single codebase and to facilitate straightforward comparison and adoption of different approaches. With a few lines of code, researchers can reproducibly run, compare, and benchmark most modern spike sorting algorithms; pre-process, post-process, and visualize extracellular datasets; validate, curate, and export sorting outputs; and more. In this paper, we provide an overview of SpikeInterface and, with applications to real and simulated datasets, demonstrate how it can be utilized to reduce the burden of manual curation and to more comprehensively benchmark automated spike sorters."
+    },
+    "000035": {
+        "doi": "doi:10.1038/s41586-020-2907-3",
+        "metadata": {
+            "species_names": [
+                "House mouse"
+            ],
+            "approach_names": [],
+            "measurement_names": [],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+            ],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Cortical neurons exhibit extreme diversity in gene expression as well as in morphological and electrophysiological properties1,2. Most existing neural taxonomies are based on either transcriptomic3,4 or morpho-electric5,6 criteria, as it has been technically challenging to study both aspects of neuronal diversity in the same set of cells7. Here we used Patch-seq8 to combine patch-clamp recording, biocytin staining, and single-cell RNA sequencing of more than 1,300 neurons in adult mouse primary motor cortex, providing a morpho-electric annotation of almost all transcriptomically defined neural cell types. We found that, although broad families of transcriptomic types (those expressing Vip, Pvalb, Sst and so on) had distinct and essentially non-overlapping morpho-electric phenotypes, individual transcriptomic types within the same family were not well separated in the morpho-electric space. Instead, there was a continuum of variability in morphology and electrophysiology, with neighbouring transcriptomic cell types showing similar morpho-electric features, often without clear boundaries between them. Our results suggest that neuronal types in the neocortex do not always form discrete entities. Instead, neurons form a hierarchy that consists of distinct non-overlapping branches at the level of families, but can form continuous and correlated transcriptomic and morpho-electrical landscapes within families."
+    },
+    "000036": {
+        "doi": "10.1523/eneuro.0280-21.2021",
+        "metadata": {
+            "species_names": [],
+            "approach_names": [
+                "microscopy approach; cell population imaging",
+                "behavioral approach"
+            ],
+            "measurement_names": [
+                "behavioral technique"
+            ],
+            "species_identifiers": [],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Despite significant progress in understanding neural coding, it remains unclear how the coordinated activity of large populations of neurons relates to what an observer actually perceives. Since neurophysiological differences must underlie differences among percepts,differentiation analysis\u2014quantifying distinct patterns of neurophysiological activity\u2014has been proposed as an \u201cinside-out\u201d approach that addresses this question. This methodology contrasts with \u201coutside-in\u201d approaches such as feature tuning and decoding analyses, which are defined in terms of extrinsic experimental variables. Here, we used two-photon calcium imaging in mice of both sexes to systematically survey stimulus-evoked neurophysiological differentiation (ND) in excitatory neuronal populations in layers (L)2/3, L4, and L5 across five visual cortical areas (primary, lateromedial, anterolateral, posteromedial, and anteromedial) in response to naturalistic and phase-scrambled movie stimuli. We find that unscrambled stimuli evoke greater ND than scrambled stimuli specifically in L2/3 of the anterolateral and anteromedial areas, and that this effect is modulated by arousal state and locomotion. By contrast, decoding performance was far above chance and did not vary substantially across areas and layers. Differentiation also differed within the unscrambled stimulus set, suggesting that differentiation analysis may be used to probe the ethological relevance of individual stimuli."
+    },
+    "000044": {
+        "doi": "doi: 10.1126/science.aad1935",
+        "metadata": {
+            "species_names": [
+                "Brown rat"
+            ],
+            "approach_names": [
+                "electrophysiological approach"
+            ],
+            "measurement_names": [
+                "signal filtering technique",
+                "multi electrode extracellular electrophysiology recording technique",
+                "spike sorting technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_10116"
+            ],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Do neural activity patterns during sleep reflect the replay of a novel experience or an invariant preexisting dynamic? Grosmark and Buzs\u00e1ki observed that both familiar and novel aspects of learned information are replayed during synchronous bursts of activity in the hippocampus. Familiarity was encoded by fast-firing less-modifiable neurons that showed rate and sequence correlations that persisted into postlearning sleep. The novel features of an experience were represented by a different set of slowly firing and highly plastic cells."
+    },
+    "000053": {
+        "doi": "DOI:10.1038/s41467-021-20936-8",
+        "metadata": {
+            "species_names": [
+                "House mouse"
+            ],
+            "approach_names": [
+                "behavioral approach",
+                "electrophysiological approach"
+            ],
+            "measurement_names": [
+                "signal filtering technique",
+                "surgical technique",
+                "behavioral technique",
+                "spike sorting technique",
+                "analytical technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+            ],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Neural circuits generate representations of the external world from multiple information streams. The navigation system provides an exceptional lens through which we may gain insights about how such computations are implemented. Neural circuits in the medial temporal lobe construct a map-like representation of space that supports navigation. This computation integrates multiple sensory cues, and, in addition, is thought to require cues related to the individual\u2019s movement through the environment. Here, we identify multiple self-motion signals, related to the position and velocity of the head and eyes, encoded by neurons in a key node of the navigation circuitry of mice, the medial entorhinal cortex (MEC). The representation of these signals is highly integrated with other cues in individual neurons. Such information could be used to compute the allocentric location of landmarks from visual cues and to generate internal representations of space."
+    },
+    "000055": {
+        "doi": "DOI:10.1523/ENEURO.0007-21.2021",
+        "metadata": {
+            "species_names": [
+                "Human"
+            ],
+            "approach_names": [
+                "behavioral approach",
+                "electrophysiological approach"
+            ],
+            "measurement_names": [
+                "behavioral technique",
+                "multi electrode extracellular electrophysiology recording technique",
+                "analytical technique",
+                "surgical technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+            ],
+            "anatomy": [
+                "primary motor cortex"
+            ],
+            "anatomy_identifiers": [
+                "UBERON:0001384"
+            ]
+        },
+        "abstract": "Motor behaviors are central to many functions and dysfunctions of the brain, and understanding their neural basis has consequently been a major focus in neuroscience. However, most studies of motor behaviors have been restricted to artificial, repetitive paradigms, far removed from natural movements performed \u201cin the wild.\u201d Here, we leveraged recent advances in machine learning and computer vision to analyze intracranial recordings from 12 human subjects during thousands of spontaneous, unstructured arm reach movements, observed over several days for each subject. These naturalistic movements elicited cortical spectral power patterns consistent with findings from controlled paradigms, but with considerable neural variability across subjects and events. We modeled interevent variability using 10 behavioral and environmental features; the most important features explaining this variability were reach angle and day of recording. Our work is among the first studies connecting behavioral and neural variability across cortex in humans during unstructured movements and contributes to our understanding of long-term naturalistic behavior."
+    },
+    "000114": {
+        "doi": "https://doi.org/10.1038/s41586-021-03814-7",
+        "metadata": {
+            "species_names": [
+                "Mus musculus - House mouse"
+            ],
+            "approach_names": [
+                "electrophysiological approach"
+            ],
+            "measurement_names": [
+                "analytical technique",
+                "multi electrode extracellular electrophysiology recording technique",
+                "surgical technique",
+                "spike sorting technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+            ],
+            "anatomy": [
+                "paraventricular nucleus of hypothalamus"
+            ],
+            "anatomy_identifiers": [
+                "http://purl.obolibrary.org/obo/UBERON_0001930"
+            ]
+        },
+        "abstract": "Maternal care, including by non-biological parents, is important for offspring survival1\u20138. Oxytocin1,2,9\u201315, which is\u00a0released by the hypothalamic paraventricular nucleus (PVN), is a critical maternal hormone. In mice, oxytocin enables neuroplasticity in the auditory cortex for maternal recognition of pup distress15. However, it is unclear how initial parental experience promotes hypothalamic signalling and cortical plasticity for reliable maternal care. Here we continuously monitored the\u00a0behaviour of female virgin mice co-housed with an experienced mother and litter. This documentary approach was synchronized with neural recordings from the virgin PVN, including oxytocin neurons. These cells were activated as virgins were enlisted in maternal care by experienced mothers, who shepherded virgins into the nest and demonstrated pup retrieval. Virgins visually observed maternal retrieval, which\u00a0activated PVN oxytocin neurons and promoted alloparenting. Thus rodents can acquire maternal behaviour by social transmission, providing a mechanism for adapting the\u00a0brains of adult caregivers to infant needs via endogenous oxytocin."
+    },
+    "000127": {
+        "doi": "10.7554/eLife.48198",
+        "metadata": {
+            "species_names": [
+                "Rhesus monkey"
+            ],
+            "approach_names": [
+                "electrophysiological approach",
+                "behavioral approach"
+            ],
+            "measurement_names": [
+                "surgical technique",
+                "spike sorting technique",
+                "analytical technique",
+                "behavioral technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_9544"
+            ],
+            "anatomy": [
+                "Somatosensory area 2"
+            ],
+            "anatomy_identifiers": [
+                "UBERON:0013533"
+            ]
+        },
+        "abstract": "Proprioception, the sense of body position, movement, and associated forces, remains poorly understood, despite its critical role in movement. Most studies of area 2, a proprioceptive area of somatosensory cortex, have simply compared neurons\u2019 activities to the movement of the hand through space. Using motion tracking, we sought to elaborate this relationship by characterizing how area 2 activity relates to whole arm movements. We found that a whole-arm model, unlike classic models, successfully predicted how features of neural activity changed as monkeys reached to targets in two workspaces. However, when we then evaluated this whole-arm model across active and passive movements, we found that many neurons did not consistently represent the whole arm over both conditions. These results suggest that 1) neural activity in area 2 includes representation of the whole arm during reaching and 2) many of these neurons represented limb state differently during active and passive movements."
+    },
+    "000147": {
+        "doi": "https://doi.org/10.7554/eLife.74478",
+        "metadata": {
+            "species_names": [
+                "Homo sapiens - Human"
+            ],
+            "approach_names": [
+                "electrophysiological approach"
+            ],
+            "measurement_names": [
+                "spike sorting technique",
+                "surgical technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+            ],
+            "anatomy": [
+                "posterior parietal cortex"
+            ],
+            "anatomy_identifiers": [
+                "UBERON:0034889"
+            ]
+        },
+        "abstract": "Neural plasticity allows us to learn skills and incorporate new experiences. What happens when our lived experiences fundamentally change, such as after a severe injury? To address this question, we analyzed intracortical population activity in the posterior parietal cortex (PPC) of a tetraplegic adult as she controlled a virtual hand through a brain\u2013computer interface (BCI). By attempting to move her fingers, she could accurately drive the corresponding virtual fingers. Neural activity during finger movements exhibited robust representational structure similar to fMRI recordings of able-bodied individuals\u2019 motor cortex, which is known to reflect able-bodied usage patterns. The finger representational structure was consistent throughout multiple sessions, even though the structure contributed to BCI decoding errors. Within individual BCI movements, the representational structure was dynamic, first resembling muscle activation patterns and then resembling the anticipated sensory consequences. Our results reveal that motor representations in PPC reflect able-bodied motor usage patterns even after paralysis, and BCIs can re-engage these stable representations to restore lost motor functions."
+    },
+    "000212": {
+        "doi": "https://doi.org/10.1101/2021.09.23.461548",
+        "metadata": {
+            "species_names": [
+                "Drosophila melanogaster - Fruit fly",
+                "Drosophila suzukii"
+            ],
+            "approach_names": [
+                "behavioral approach"
+            ],
+            "measurement_names": [
+                "analytical technique",
+                "behavioral technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_7227",
+                "http://purl.obolibrary.org/obo/NCBITaxon_28584"
+            ],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Whereas progress has been made in identifying neural signals related to rapid, cued decisions1\u20134, less is known about how brains guide and terminate more ethologically relevant deliberations, where an animal\u2019s own behavior governs the options experienced over minutes5\u20138. Drosophila search for many seconds to minutes for egg-laying sites with high relative value9, 10 and neurons, called oviDNs, exist whose activity fulfills necessity and sufficiency criteria for initiating the egg-deposition motor program11. Here we show that oviDNs express a calcium signal that rises over seconds to minutes as a fly deliberates whether to lay an egg. The calcium signal dips when an egg is internally prepared (ovulated), rises at a rate related to the relative value of the current substrate being experienced, and reaches a consistent peak just prior to the abdomen bend for egg deposition. We provide perturbational evidence that the egg-deposition motor program is initiated once this signal hits a threshold and that sub-threshold variation in the signal regulates the time spent deliberating and, ultimately, the option chosen. These results argue that a rise-to-threshold signal guides Drosophila to lay eggs on substrate options with high relative value, with each egg-laying event representing a self-paced decision similar to real-world decisions made by humans and other mammals."
+    },
+    "000230": {
+        "doi": "https://doi.org/10.1101/2021.10.18.464781 ",
+        "metadata": {
+            "species_names": [
+                "Mus musculus - House mouse"
+            ],
+            "approach_names": [
+                "behavioral approach",
+                "electrophysiological approach"
+            ],
+            "measurement_names": [
+                "spike sorting technique",
+                "behavioral technique",
+                "surgical technique",
+                "signal filtering technique",
+                "analytical technique",
+                "multi electrode extracellular electrophysiology recording technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+            ],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Neuronal firing patterns are the result of inputs converging onto single cells. Identifying these inputs, anatomically and functionally, is essential to understand how neurons integrate information. Single-cell electroporation of helper genes and subsequent local injection of recombinant rabies viruses enable precise mapping of inputs to individual cells in superficial layers of the intact cortex. However, access to neurons in deeper structures requires more invasive procedures, including removal of overlying tissue. We have developed a method that through a combination of virus injections allows us to target \u22644 hippocampal cells 48% of the time and a single cell 16% of the time in wildtype mice without the use of electroporation or tissue aspiration. We identify local and distant monosynaptic inputs that can be functionally characterised in vivo. By expanding the toolbox for monosynaptic circuit tracing, this method will help further our understanding of neuronal integration at the level of single cells."
+    },
+    "000231": {
+        "doi": "10.1101/2022.05.10.491259",
+        "metadata": {
+            "species_names": [
+                "Mus musculus - House mouse"
+            ],
+            "approach_names": [
+                "behavioral approach",
+                "electrophysiological approach"
+            ],
+            "measurement_names": [
+                "analytical technique",
+                "behavioral technique",
+                "multi electrode extracellular electrophysiology recording technique",
+                "surgical technique",
+                "spike sorting technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+            ],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Mice adeptly use their whiskers to touch, recognize, and learn about objects in their environment. This ability is enabled by computations performed by populations of neurons in the somatosensory cortex. To understand these computations, we trained mice to use their whiskers to recognize different shapes while we recorded activity in the barrel cortex, which processes whisker input. Here, we present a large dataset of high-speed video of the whiskers, along with rigorous tracking of the entire extent of multiple whiskers and every contact they made on the shape. We used spike sorting to identify individual neurons, which responded with precise timing to whisker contacts and motion. These data will be useful for understanding the behavioral strategies mice use to identify objects by touch, as well as the neuronal responses that mediate those strategies. More generally, our carefully curated labeled data could be used to develop new computer vision algorithms for tracking body posture, or for extracting responses of individual neurons from large-scale neural recordings."
+    },
+    "000247": {
+        "doi": "https://doi.org/10.1101/2021.09.23.461548 ",
+        "metadata": {
+            "species_names": [
+                "Drosophila melanogaster - Fruit fly"
+            ],
+            "approach_names": [],
+            "measurement_names": [
+                "analytical technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_7227"
+            ],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Whereas progress has been made in identifying neural signals related to rapid, cued decisions1\u20134, less is known about how brains guide and terminate more ethologically relevant deliberations, where an animal\u2019s own behavior governs the options experienced over minutes5\u20138. Drosophila search for many seconds to minutes for egg-laying sites with high relative value9, 10 and neurons, called oviDNs, exist whose activity fulfills necessity and sufficiency criteria for initiating the egg-deposition motor program11. Here we show that oviDNs express a calcium signal that rises over seconds to minutes as a fly deliberates whether to lay an egg. The calcium signal dips when an egg is internally prepared (ovulated), rises at a rate related to the relative value of the current substrate being experienced, and reaches a consistent peak just prior to the abdomen bend for egg deposition. We provide perturbational evidence that the egg-deposition motor program is initiated once this signal hits a threshold and that sub-threshold variation in the signal regulates the time spent deliberating and, ultimately, the option chosen. These results argue that a rise-to-threshold signal guides Drosophila to lay eggs on substrate options with high relative value, with each egg-laying event representing a self-paced decision similar to real-world decisions made by humans and other mammals."
+    },
+    "000250": {
+        "doi": "https://doi.org/10.1101/2021.09.23.461548",
+        "metadata": {
+            "species_names": [
+                "Drosophila melanogaster - Fruit fly"
+            ],
+            "approach_names": [
+                "behavioral approach"
+            ],
+            "measurement_names": [
+                "behavioral technique",
+                "analytical technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_7227"
+            ],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Whereas progress has been made in identifying neural signals related to rapid, cued decisions1\u20134, less is known about how brains guide and terminate more ethologically relevant deliberations, where an animal\u2019s own behavior governs the options experienced over minutes5\u20138. Drosophila search for many seconds to minutes for egg-laying sites with high relative value9, 10 and neurons, called oviDNs, exist whose activity fulfills necessity and sufficiency criteria for initiating the egg-deposition motor program11. Here we show that oviDNs express a calcium signal that rises over seconds to minutes as a fly deliberates whether to lay an egg. The calcium signal dips when an egg is internally prepared (ovulated), rises at a rate related to the relative value of the current substrate being experienced, and reaches a consistent peak just prior to the abdomen bend for egg deposition. We provide perturbational evidence that the egg-deposition motor program is initiated once this signal hits a threshold and that sub-threshold variation in the signal regulates the time spent deliberating and, ultimately, the option chosen. These results argue that a rise-to-threshold signal guides Drosophila to lay eggs on substrate options with high relative value, with each egg-laying event representing a self-paced decision similar to real-world decisions made by humans and other mammals."
+    },
+    "000252": {
+        "doi": "https://doi.org/10.1101/2022.12.07.22283227 ",
+        "metadata": {
+            "species_names": [
+                "Homo sapiens - Human"
+            ],
+            "approach_names": [
+                "electrophysiological approach"
+            ],
+            "measurement_names": [
+                "surgical technique",
+                "spike sorting technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+            ],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Enable neural control of individual prosthetic fingers for participants with upper-limb paralysis."
+    },
+    "000559": {
+        "doi": "https://doi.org/10.1038/s41586-022-05611-2",
+        "metadata": {
+            "species_names": [
+                "Mus musculus - House mouse"
+            ],
+            "approach_names": [
+                "behavioral approach",
+                "optogenetic approach"
+            ],
+            "measurement_names": [
+                "behavioral technique",
+                "analytical technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+            ],
+            "anatomy": [],
+            "anatomy_identifiers": []
+        },
+        "abstract": "Spontaneous animal behaviour is built from action modules that are concatenated by the brain into sequences1,2. However, the neural mechanisms that guide the composition of naturalistic, self-motivated behaviour remain unknown. Here we show that dopamine systematically fluctuates in the dorsolateral striatum (DLS) as mice spontaneously express sub-second behavioural modules, despite the absence of task structure, sensory cues or exogenous reward. Photometric recordings and calibrated closed-loop optogenetic manipulations during open field behaviour demonstrate that DLS dopamine fluctuations increase sequence variation over seconds, reinforce the use of associated behavioural modules over minutes, and modulate the vigour with which modules are expressed, without directly influencing movement initiation or moment-to-moment kinematics. Although the reinforcing effects of optogenetic DLS dopamine manipulations vary across behavioural modules and individual mice, these differences are well predicted by observed variation in the relationships between endogenous dopamine and module use. Consistent with the possibility that DLS dopamine fluctuations act as a teaching signal, mice build sequences during exploration as if to maximize dopamine. Together, these findings suggest a model in which the same circuits and computations that govern action choices in structured tasks have a key role in sculpting the content of unconstrained, high-dimensional, spontaneous behaviour."
+    },
+    "000568": {
+        "doi": "https://doi.org/10.1126/science.abm1891",
+        "metadata": {
+            "species_names": [
+                "Mus musculus - House mouse"
+            ],
+            "approach_names": [
+                "behavioral approach",
+                "electrophysiological approach",
+                "optogenetic approach"
+            ],
+            "measurement_names": [
+                "spike sorting technique",
+                "behavioral technique",
+                "signal filtering technique",
+                "analytical technique",
+                "surgical technique",
+                "multi electrode extracellular electrophysiology recording technique"
+            ],
+            "species_identifiers": [
+                "http://purl.obolibrary.org/obo/NCBITaxon_10090"
+            ],
+            "anatomy": [
+                "hippocampus"
+            ],
+            "anatomy_identifiers": [
+                "UBERON:0002421"
+            ]
+        },
+        "abstract": "Understanding how excitatory (E) and inhibitory (I) inputs are integrated by neurons requires monitoring their subthreshold behavior. We probed the subthreshold dynamics using optogenetic depolarizing pulses in hippocampal neuronal assemblies in freely moving mice. Excitability decreased during sharp-wave ripples coupled with increased I. In contrast to this \u201cnegative gain,\u201d optogenetic probing showed increased within-field excitability in place cells by weakening I and unmasked stable place fields in initially non\u2013place cells. Neuronal assemblies active during sharp-wave ripples in the home cage predicted spatial overlap and sequences of place fields of both place cells and unmasked preexisting place fields of non\u2013place cells during track running. Thus, indirect probing of subthreshold dynamics in neuronal populations permits the disclosing of preexisting assemblies and modes of neuronal operations."
+    }
+}
