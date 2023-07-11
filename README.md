@@ -17,7 +17,9 @@ With a scientific question defined and useful DANDI sets identified, LLMs could 
 
 ## Relevant tools and services
 [OpenAI](https://openai.com/) and [Cohere](https://cohere.com/) are the LLMs SaaS providers we would consider using for completion, extraction and embedding tasks. These models are publicly available through APIs.
+
 [Qdrant](https://qdrant.tech/) and [Weaviate](https://weaviate.io/) are two options of vector search engines, both open source and with SaaS offerings as well.
+
 [LangChain](https://github.com/hwchase17/langchain) is a Python package useful for creating applications using LLMs.
 
 
