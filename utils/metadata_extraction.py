@@ -115,9 +115,12 @@ def ground_metadata_in_ontologies(plain_metadata):
 
 def _ground_metadata_in_ontologies_uberon(client, embedding_model, plain_metadata):
     collection_name = "uberon"
-    uberon_key_to_url = lambda x: f"http://purl.obolibrary.org/obo/{x.replace(':', '_')}"
+    id_to_url = lambda x: f"http://purl.obolibrary.org/obo/{x.replace(':', '_')}"
 
     anatomy_terms_list =  plain_metadata["anatomy"]
+    if anatomy_terms_list == []:
+        return plain_metadata
+    
     term_embedding_list = embedding_model.embed_documents(anatomy_terms_list)
     anatomy_term_to_embedings = {anatomy_terms_list[i]: term_embedding_list[i] for i in range(len(anatomy_terms_list))}
 
@@ -129,43 +132,43 @@ def _ground_metadata_in_ontologies_uberon(client, embedding_model, plain_metadat
         search_results = client.search(collection_name=collection_name, query_vector=query_vector, limit=top, with_payload=True, with_vectors=False)
         
         uberon_ids = [result.payload["uberon_id"] for result in search_results]
-        uberon_urls = [uberon_key_to_url(uberon_id) for uberon_id in uberon_ids]
+        uberon_urls = [id_to_url(uberon_id) for uberon_id in uberon_ids]
         
         term_to_identifiers_dict[anatomy_term] = (uberon_ids[0], uberon_urls[0])
         
     
-    plain_metadata[f"anatomy_identifiers"] = [term_to_identifiers_dict[anatomy_term][0] for anatomy_term in anatomy_terms_list]
-    plain_metadata["anatomy_urls"] = [term_to_identifiers_dict[anatomy_term][1] for anatomy_term in anatomy_terms_list]
+    plain_metadata[f"{collection_name}_identifiers"] = [term_to_identifiers_dict[anatomy_term][0] for anatomy_term in anatomy_terms_list]
+    plain_metadata[f"{collection_name}_urls"] = [term_to_identifiers_dict[anatomy_term][1] for anatomy_term in anatomy_terms_list]
     
     return plain_metadata
     
 
 def _ground_metadata_in_ontologies_ncbi_taxon(client, embedding_model, plain_metadata):
     collection_name = "ncbi_taxon"
-    ncbi_key_to_url = lambda x: f"http://purl.obolibrary.org/obo/{x.replace(':', '_')}"
+    id_to_url = lambda x: f"http://purl.obolibrary.org/obo/{x.replace(':', '_')}"
 
-    species_term_list =  plain_metadata["species_names"]
-    if species_term_list == []:
+    term_list =  plain_metadata["species_names"]
+    if term_list == []:
         return plain_metadata
     
-    term_embedding_list = embedding_model.embed_documents(species_term_list)
-    species_term_to_embedings = {species_term_list[i]: term_embedding_list[i] for i in range(len(species_term_list))}
+    term_embedding_list = embedding_model.embed_documents(term_list)
+    term_to_embeddings = {term_list[i]: term_embedding_list[i] for i in range(len(term_list))}
 
     top = 1  # The number of similar vectors you want to retrieve
     term_to_identifiers_dict = {}
-    for species_term, embedding in species_term_to_embedings.items():
+    for term, embedding in term_to_embeddings.items():
         
         query_vector = embedding
         search_results = client.search(collection_name=collection_name, query_vector=query_vector, limit=top, with_payload=True, with_vectors=False)
         
-        uberon_ids = [result.payload["ncbi_taxon_id"] for result in search_results]
-        uberon_urls = [ncbi_key_to_url(uberon_id) for uberon_id in uberon_ids]
+        ids = [result.payload["ncbi_taxon_id"] for result in search_results]
+        urls = [id_to_url(id) for id in ids]
         
-        term_to_identifiers_dict[species_term] = (uberon_ids[0], uberon_urls[0])
+        term_to_identifiers_dict[term] = (ids[0], urls[0])
         
     
-    plain_metadata[f"species_identifiers"] = [term_to_identifiers_dict[species_term][0] for species_term in species_term_list]
-    plain_metadata["species_urls"] = [term_to_identifiers_dict[species_term][1] for species_term in species_term_list]
+    plain_metadata[f"{collection_name}_identifiers"] = [term_to_identifiers_dict[term][0] for term in term_list]
+    plain_metadata[f"{collection_name}_urls"] = [term_to_identifiers_dict[term][1] for term in term_list]
     
     return plain_metadata
 
