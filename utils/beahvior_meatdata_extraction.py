@@ -60,69 +60,8 @@ def extract_behavior_metadata_from(section):
 
     return behaviors
 
-def ground_metadata_in_ontologies(term_list: list) -> dict:
-    collection_name = "neuro_behavior_ontology"
-    embedding_model = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
-    url = "https://c1490259-dfe4-4a49-8712-24f690d450f6.us-east-1-0.aws.cloud.qdrant.io:6333"
-    api_key = os.environ["QDRANT_API_KEY"]
-    client = QdrantClient(
-        url=url,
-        api_key=api_key,
-    )
 
-    id_to_url = lambda x: f"http://purl.obolibrary.org/obo/{x.replace(':', '_')}"
-
-    top = 1  # The number of similar vectors you want to retrieve from the database
-    score_threshold = 0.5  # The minimum cosine similarity score you want to retrieve from the database
-    term_embedding_list = embedding_model.embed_documents(term_list)
-    term_to_embeddings = {
-        term_list[i]: term_embedding_list[i] for i in range(len(term_list))
-    }
-
-    term_to_identifiers_dict = {}
-    for term, embedding in term_to_embeddings.items():
-        query_vector = embedding
-        search_results = client.search(
-            collection_name=collection_name,
-            query_vector=query_vector,
-            limit=top,
-            with_payload=True,
-            score_threshold=score_threshold,
-            with_vectors=False,
-        )
-
-        ids = [result.payload[f"{collection_name}_id"] for result in search_results]
-        names = [result.payload["name"] for result in search_results]
-        score = [result.score for result in search_results]
-        text_embedded = [
-            result.payload["text_for_embedding"] for result in search_results
-        ]
-
-        urls = [id_to_url(id) for id in ids]
-
-        if ids:
-            id = ids[0]
-            term_to_identifiers_dict[id] = dict(
-                name=names[0],
-                score=score[0],
-                url=urls[0],
-                context=term,
-                text_embedded=text_embedded[0],
-            )
-
-    # Order the term_to_identifiers_dict by score
-    term_to_identifiers_dict = dict(
-        sorted(
-            term_to_identifiers_dict.items(),
-            key=lambda item: item[1]["score"],
-            reverse=True,
-        )
-    )
-
-    return term_to_identifiers_dict
-
-
-def ground_metadata_in_ontologies_multiple_query(term_list: list) -> list:
+def ground_metadata_in_ontologies(term_list: list) -> list:
     collection_name = "neuro_behavior_ontology"
     embedding_model = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
     url = "https://c1490259-dfe4-4a49-8712-24f690d450f6.us-east-1-0.aws.cloud.qdrant.io:6333"
@@ -255,10 +194,12 @@ def rerank_with_open_ai_use_name_matching(queries_response_list, top=1, verbose=
         if response != "[]":
             names_in_query_response = response.strip("[").strip("]").replace("'", "").split(",")
             names_in_query_response = [n for n in names_in_query_response if n in names]
-            print(names_in_query_response)
+            if verbose:
+                print(names_in_query_response)
             if names_in_query_response:
                 names_index_list = [names.index(n) for n in names_in_query_response][:top]
-                print(names_index_list)
+                if verbose:
+                    print(names_index_list)
                 names_found = [names[n] for n in names_index_list]
                 ids = [ids[n] for n in names_index_list]
                 urls = [urls[n] for n in names_index_list]
