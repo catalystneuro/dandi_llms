@@ -197,12 +197,14 @@ def add_ordered_similarity_results_to_prompt(similarity_results: list, prompt: s
     return prompt
 
 
-def get_llm_chat_answer(prompt: str, model: str = "gpt-3.5-turbo"):
+def get_llm_chat_answer(prompt: str, system_prompt: str = None, model: str = "gpt-3.5-turbo"):
     openai.api_key = os.getenv("OPENAI_API_KEY")
+    if system_prompt is None:
+        system_prompt = "You are a helpful neuroscience research assistant, you give brief and informative suggestions to users questions, always based on a list of relevant reference dandi sets."
     completion = openai.ChatCompletion.create(
         model=model,
         messages=[
-            {"role": "system", "content": "You are a helpful neuroscience research assistant, you give brief and informative suggestions to users questions, always based on a list of relevant reference dandi sets."},
+            {"role": "system", "content": system_prompt},
             {"role": "user", "content": prompt}
         ]
     )
