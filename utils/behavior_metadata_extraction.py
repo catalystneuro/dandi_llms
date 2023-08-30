@@ -64,10 +64,10 @@ def extract_behavior_metadata_from(section):
 def ground_metadata_in_ontologies(term_list: list) -> list:
     collection_name = "neuro_behavior_ontology"
     embedding_model = OpenAIEmbeddings(openai_api_key=os.environ["OPENAI_API_KEY"])
-    url = "https://c1490259-dfe4-4a49-8712-24f690d450f6.us-east-1-0.aws.cloud.qdrant.io:6333"
+    qdrant_url = "https://18ef891e-d231-4fdd-8f6d-8e2d91337c24.us-east4-0.gcp.cloud.qdrant.io"
     api_key = os.environ["QDRANT_API_KEY"]
     client = QdrantClient(
-        url=url,
+        url=qdrant_url,
         api_key=api_key,
     )
 
@@ -164,7 +164,6 @@ def rerank_with_open_ai(queries_response_list, verbose=False):
     
 
 def rerank_with_open_ai_use_name_matching(queries_response_list, top=1, verbose=False):
-    
     
     ontology_terms = []
 

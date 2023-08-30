@@ -1,12 +1,14 @@
-import obonet
-import pandas as pd
-import tiktoken
+from pathlib import Path
 import os
 import pickle
 
 
+import obonet
+import pandas as pd
+import tiktoken
 import numpy as np
 from langchain.embeddings.openai import OpenAIEmbeddings
+
 
 #################
 # Prepare the ontology
@@ -19,7 +21,6 @@ nodes_in_nbo = [node for node in graph.nodes if "NBO" in node]  # This eliminate
 
 # This restricts the nodes to their most specific versions. You get `caffein adiction behavior` but not `addictive behavior`
 source_nodes = [node for node in nodes_in_nbo if  graph.in_degree(node) == 0 and graph.out_degree(node) > 0]
-
 
 id_to_names = {}
 id_to_synonyms = {}
@@ -79,7 +80,7 @@ to_embed += " " + df_ontology["definition"]
 to_embed += " " + df_ontology["parent_names"]
 
 df_ontology["to_embed"] = to_embed
-df_ontology.to_csv("../data/behavior_ontology.csv", index=False)
+df_ontology.to_csv("./data/behavior_ontology.csv", index=False)
 
 # embedding model parameters
 embedding_model = "text-embedding-ada-002"
@@ -97,7 +98,7 @@ print(f"Total prize to embed {total_tokens * dollars_per_token: 2.4f} USD ")
 # Embedd the ontology
 ###########
 
-file_path = Path('../data/nbo_embeddings_complete.pickle')
+file_path = Path('./data/nbo_embeddings_complete.pickle')
 overwrite = False
 
 if overwrite:
@@ -124,10 +125,10 @@ from qdrant_client import QdrantClient
 from qdrant_client.http.models import Distance, VectorParams
 from qdrant_client.http import models
 
-url = "https://c1490259-dfe4-4a49-8712-24f690d450f6.us-east-1-0.aws.cloud.qdrant.io:6333"
+qdrant_url = "https://18ef891e-d231-4fdd-8f6d-8e2d91337c24.us-east4-0.gcp.cloud.qdrant.io"
 api_key = os.environ["QDRANT_API_KEY"]
 client = QdrantClient(
-    url=url,
+    url=qdrant_url,
     api_key=api_key,
 )
 
