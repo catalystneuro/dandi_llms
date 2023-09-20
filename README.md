@@ -2,6 +2,9 @@
 We have identified at least three problems where leveraging the potential of Large Language Models (LLMs) could help address these issues effectively.
 
 ## 1. Automatically assign relevant ontological terms to Dandiset metadata
+
+[search ontology notebook](behavior_metadata_extraction.ipynb)
+
 LLMs are very promising tools to automate the extraction of well-annotated references to relevant ontological terms (species, techniques, equipment, sensory modality, task type, etc.) from raw unstructured text data such as abstracts, methods sections, or entire papers.
 
 In recent developments, OpenAI trained and [made available](https://openai.com/blog/function-calling-and-other-api-updates) models specialized in structured data (JSON) extraction, which could be readily applied to this end.
